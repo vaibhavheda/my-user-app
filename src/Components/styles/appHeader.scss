@@ -1,0 +1,81 @@
+$app-logo-symbol-font-size: 90px;
+$app-header-link-color: rgb(22, 24, 26);
+$app-logo-color: white;
+$app-logo-font-size: Verdana, Geneva, Tahoma, sans-serif;
+.app-core {
+	width: 900px;
+	margin: auto;
+
+	.top-header {
+		padding-top: 80px;
+		display: block;
+		color: $app-header-link-color;
+		font-family: $app-logo-font-size;
+		.inner {
+			display: flex;
+			nav {
+				margin-top: 20px;
+				flex-grow: 1;
+				flex-shrink: 1;
+
+				ul {
+					list-style: none;
+					padding: 0 16px;
+					margin: 0;
+				}
+				li {
+					position: relative;
+					margin-left: 20px;
+					margin-right: 10px;
+					letter-spacing: 1px;
+					display: inline-block;
+					cursor: pointer;
+					.star {
+						font-size: 16px;
+						position: absolute;
+						top: -5px;
+						right: -15px;
+						animation: Star-spin infinite 5s linear;
+					}
+				}
+				li::after {
+					content: " ";
+					display: block;
+					position: absolute;
+					bottom: -8px;
+					width: 0;
+					height: 2px;
+					transform: scale(0, 3);
+					background: $app-header-link-color;
+					transition: all 0.3s;
+					transition-timing-function: cubic-bezier(
+						0.645,
+						0.045,
+						0.355,
+						1
+					);
+					transform-origin: left bottom;
+				}
+				li:hover::after {
+					width: 100%;
+					transform: scale(1, 1);
+				}
+
+				a {
+					font-size: 16px;
+					display: block;
+					text-align: center;
+					text-decoration: none;
+					color: $app-header-link-color;
+					font-weight: 600;
+					letter-spacing: -1px;
+				}
+			}
+		}
+		a:visited,
+		a:active,
+		a:link {
+			color: $app-header-link-color;
+		}
+	}
+}
